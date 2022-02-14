@@ -12,6 +12,7 @@ import ProForm, {
   ProFormFieldSet,
   ProFormTextArea,
 } from '@ant-design/pro-form';
+import ICD10Form from "@/pages/apply/components/ICD10Form";
 import { PageContainer } from '@ant-design/pro-layout';
 import styles from './index.less';
 import Mock from 'mockjs';
@@ -156,15 +157,15 @@ const ApplyIndex: FC<Record<string, any>> = () => {
                   onClick={showModal}
                 />
               </ProForm.Item> */}
-
-              <ProFormText
-                name="taa_CinicalDiagnosisID"
-                label="主要诊断"
-                placeholder=""
-                width="sm"
-                // disabled
-                onFocus={showModal}
-              />
+              <ICD10Form></ICD10Form>
+              {/*<ProFormText*/}
+              {/*  name="taa_CinicalDiagnosisID"*/}
+              {/*  label="主要诊断"*/}
+              {/*  placeholder=""*/}
+              {/*  width="sm"*/}
+              {/*  // disabled*/}
+              {/*  onFocus={showModal}*/}
+              {/*/>*/}
             </Col>
             <Col lg={8} md={12} sm={24}>
               <ProFormText name="taa_Payee" label="领款人" placeholder="" width="sm" />

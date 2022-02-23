@@ -27,7 +27,7 @@ export async function login(body: API.LoginParams, options?: { [key: string]: an
     headers: {
       'Content-Type': 'application/json',
     },
-    data: body,
+    data: { username: body.username, password: body.password, verifycode: '' },
     ...(options || {}),
   });
 }

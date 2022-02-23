@@ -16,7 +16,8 @@ export default {
     '/zmzb/': {
       target: 'https://192.168.1.112/',
       changeOrigin: true,
-      pathRewrite: { '^': '' },
+      secure: false,
+      pathRewrite: { '^/zmzb': '/' },
     },
   },
   test: {

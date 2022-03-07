@@ -6,8 +6,11 @@ import { request } from 'umi';
 export async function currentUser(options?: { [key: string]: any }) {
   return request<{
     data: API.CurrentUser;
-  }>('/api/currentUser', {
-    method: 'GET',
+  }>('/api/user/getCurrentUserInfo', {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     ...(options || {}),
   });
 }
@@ -22,12 +25,12 @@ export async function outLogin(options?: { [key: string]: any }) {
 
 /** 登录接口 POST /api/login/account */
 export async function login(body: API.LoginParams, options?: { [key: string]: any }) {
-  return request<API.LoginResult>('/zmzb/Login/CheckLogin', {
+  return request<API.ResponseResult>('/api/user/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    data: { username: body.username, password: body.password, verifycode: '' },
+    data: { ...body },
     ...(options || {}),
   });
 }

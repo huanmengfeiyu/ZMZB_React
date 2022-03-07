@@ -2,6 +2,15 @@
 /* eslint-disable */
 import { request } from 'umi';
 
+/** 获取验证码 GET /api/User/getVierificationCode */
+export async function getVierificationCode(options?: { [key: string]: any }) {
+  return request<API.VierificationCode>('/api/User/getVierificationCode', {
+    method: 'GET',
+    params: {},
+    ...(options || {}),
+  });
+}
+
 /** 发送验证码 POST /api/login/captcha */
 export async function getFakeCaptcha(
   params: {

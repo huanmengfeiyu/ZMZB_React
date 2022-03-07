@@ -9,15 +9,10 @@
 export default {
   dev: {
     '/api/': {
-      target: 'https://preview.pro.ant.design',
-      changeOrigin: true,
-      pathRewrite: { '^': '' },
-    },
-    '/zmzb/': {
-      target: 'https://192.168.1.112/',
+      target: 'http://localhost:9991/',
       changeOrigin: true,
       secure: false,
-      pathRewrite: { '^/zmzb': '/' },
+      pathRewrite: { '^': '' },
     },
   },
   test: {

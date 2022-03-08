@@ -2,6 +2,32 @@
 /* eslint-disable */
 
 declare namespace API {
+  type LoginParams = {
+    username?: string;
+    password?: string;
+    verificationcode?: string;
+    uuid?: string;
+    autologin?: boolean;
+    type?: string;
+  };
+
+  type VierificationCode = {
+    img?: string;
+    uuid?: string;
+  };
+
+  type ResponseResult = {
+    status?: boolean;
+    code?: string;
+    message?: string;
+    data?: any;
+  };
+
+  type FakeCaptcha = {
+    code?: number;
+    status?: string;
+  };
+
   type CurrentUser = {
     name?: string;
     avatar?: string;
@@ -24,7 +50,9 @@ declare namespace API {
   };
 
   type LoginResult = {
-    status?: string;
+    status?: boolean;
+    code?: string;
+    message?: string;
     type?: string;
     currentAuthority?: string;
   };
@@ -54,18 +82,6 @@ declare namespace API {
     /** 列表的内容总数 */
     total?: number;
     success?: boolean;
-  };
-
-  type FakeCaptcha = {
-    code?: number;
-    status?: string;
-  };
-
-  type LoginParams = {
-    username?: string;
-    password?: string;
-    autoLogin?: boolean;
-    type?: string;
   };
 
   type ErrorResponse = {

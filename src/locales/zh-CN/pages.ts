@@ -64,4 +64,6 @@ export default {
   'pages.searchTable.tenThousand': '万',
   'pages.searchTable.batchDeletion': '批量删除',
   'pages.searchTable.batchApproval': '批量审批',
+  'page.searchTable.ICD10.title': 'ICD10列表',
+  'page.login.vierificationCode.fail': '验证码获取失败，请重试！',
 };

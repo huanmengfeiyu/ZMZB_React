@@ -9,8 +9,9 @@
 export default {
   dev: {
     '/api/': {
-      target: 'https://preview.pro.ant.design',
+      target: 'http://localhost:9991/',
       changeOrigin: true,
+      secure: false,
       pathRewrite: { '^': '' },
     },
   },

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '../style.less';
 
 export type VerificationImgProps = {
@@ -7,6 +7,10 @@ export type VerificationImgProps = {
 };
 
 const VerificationImg: React.FC<VerificationImgProps> = (props) => {
+  useEffect(() => {
+    props.onClick();
+  }, []);
+
   return (
     <div className={styles.code} onClick={props.onClick}>
       <img src={props.imgUrl} alt="刷新验证码" />

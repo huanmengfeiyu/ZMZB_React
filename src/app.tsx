@@ -110,13 +110,11 @@ const errorHandler = function (error) {
 };
 
 const authHeaderInterceptor = (url: string, options: RequestOptionsInit) => {
-  debugger;
   // if (history.location.pathname !== loginPath) {
   if (localStorage.getItem('zmzbToken')) {
     const header = {
       Authorization: 'Bearer ' + `${localStorage.getItem('zmzbToken')}`,
     };
-    console.log('headr:', header);
     return {
       url,
       options: { ...options, interceptors: true, headers: header },

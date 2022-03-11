@@ -31,7 +31,11 @@ export default (): React.ReactNode => {
           }}
         />
         <Typography.Text strong>
-          <FormattedMessage id="pages.welcome.advancedComponent" defaultMessage="Advanced Form" />{' '}
+          <div>1111</div>
+          <FormattedMessage
+            id="pages.welcome.advancedComponent"
+            defaultMessage="Advanced Form"
+          />{' '}
           <a
             href="https://procomponents.ant.design/components/table"
             rel="noopener noreferrer"

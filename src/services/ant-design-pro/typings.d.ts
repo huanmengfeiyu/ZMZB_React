@@ -29,6 +29,13 @@ declare namespace API {
   };
 
   type CurrentUser = {
+    gender?: number;
+    headImageUrl?: string;
+    phoneNo?: string;
+    remark?: string;
+    roleName?: string;
+    userName?: string;
+    userTrueName?: string;
     name?: string;
     avatar?: string;
     userid?: string;

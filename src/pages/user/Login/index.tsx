@@ -1,11 +1,4 @@
-import {
-  AlipayCircleOutlined,
-  LockOutlined,
-  MobileOutlined,
-  TaobaoCircleOutlined,
-  UserOutlined,
-  WeiboCircleOutlined,
-} from '@ant-design/icons';
+import { LockOutlined, MobileOutlined, UserOutlined } from '@ant-design/icons';
 import { Alert, message, Tabs } from 'antd';
 import React, { useState } from 'react';
 import { ProFormCaptcha, ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-form';
@@ -38,9 +31,11 @@ const Login: React.FC = () => {
   const [imgUrl, setImgUrl] = useState(''); //验证码图片
   const [uuid, setUUID] = useState('');
   const { initialState, setInitialState } = useModel('@@initialState');
-
   const intl = useIntl();
 
+  /**
+   * 获取当前用户信息
+   */
   const fetchUserInfo = async () => {
     const userInfo = await initialState?.fetchUserInfo?.();
     if (userInfo) {
@@ -51,6 +46,7 @@ const Login: React.FC = () => {
     }
   };
 
+  /** 获取验证码 */
   const GetVierificationCode = async () => {
     try {
       const res = await getVierificationCode();
